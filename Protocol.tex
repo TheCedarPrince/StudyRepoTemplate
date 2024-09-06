@@ -1,0 +1,284 @@
+%! TeX program = lualatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. Document Configuration Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set document type to article with a default font size of 12pt
+\documentclass[12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2. Font and Typography Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paragraph spacing and indentation
+\usepackage{parskip} % Adds space between paragraphs
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{6pt plus 2pt minus 1pt} % Set paragraph spacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. Math Support
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Math support packages
+\usepackage{amsmath} % For math support
+\usepackage{amssymb} % For additional math symbols
+\usepackage{unicode-math} % For Unicode math
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. Geometry and Figure Handling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set page margins to 1 inch
+\usepackage[margin=1in]{geometry}
+
+% Include graphics
+\usepackage{graphicx}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi} % Adjust image width
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi} % Adjust image height
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5. Tables and Figures Customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Table packages
+\usepackage{booktabs} % High-quality tables
+\usepackage{longtable} % Long tables spanning pages
+\usepackage{array} % Advanced table features
+\usepackage{multirow} % Merge rows in tables
+\usepackage{colortbl} % Table color customization
+
+% Customize table cells
+\usepackage{makecell}
+
+% Caption customization
+\usepackage{caption}
+
+% TikZ for diagrams
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6. List Customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Custom list environment
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7. Bibliography and Citation Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% BibLaTeX for bibliography management
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+
+% Add bibliography file
+\addbibresource{Protocol.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 8. Hyperlinks and URL Handling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{hidelinks, pdfcreator={LaTeX via pandoc}} % Hide hyperlink boxes
+
+% Set URL style to match text
+\urlstyle{same}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 9. Title, Subtitle, and Author Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title of the document
+\title{RESEARCH PROTOCOL\\Study Repo Template}
+
+% Subtitle of the document
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% Add subtitle to title
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Version: 0.0.1}
+
+% Author setup 
+\author{Jakub Mitura, Jacob S. Zelko}
+
+% Suppress date with negative vertical space
+\date{\vspace{-2.5em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 10. Fancy Header and Footer Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fancy header/footer settings
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\setlength\headheight{30.0pt}
+\addtolength{\textheight}{-30.0pt}
+
+% Custom header with image
+\chead{\includegraphics[width=\textwidth]{OHDSI_page_header}}
+\lhead{}
+\rhead{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT BEGINS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Begin document
+\begin{document}
+
+% Title
+\maketitle
+
+% Table of Contents
+\tableofcontents
+
+\section{List of Abbreviations}
+\label{list-of-abbreviations}
+
+% Example of abbreviations table
+\begin{table}[!h]
+\centering\begingroup\fontsize{8}{10}\selectfont
+\begin{tabular}{ll}
+\toprule
+\cellcolor{gray!10}{CDM} & \cellcolor{gray!10}{Common data model}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{Abstract}
+\label{abstract}
+
+\textbf{Background and Significance}:\\
+This section provides an overview of the importance and context of the research. The significance of studying the impact of interventions on health outcomes is highlighted here. \cite{Schuemie2018-zi}
+
+\textbf{Study Aims}:\\
+The main aim of this study is to evaluate the effectiveness of the intervention in reducing health risks.
+
+\textbf{Study Description}:\\
+This study will use a longitudinal design to assess the impact of the intervention over a period of six months. Data will be collected from various sources.
+
+\begin{itemize}
+  \item \textbf{Population}: Adult patients with chronic conditions.
+  \item \textbf{Comparators}: Standard care versus intervention group.
+\end{itemize}
+
+\section{Amendments and Updates}
+\label{amendments-and-updates}
+
+This section will document any changes made to the research protocol after the initial approval. Updates to the study design or methodology will be noted here.
+
+\section{Milestones}
+\label{milestones}
+
+Key milestones in the project timeline will be outlined in this section. These include major phases of the research, such as data collection, analysis, and reporting.
+
+\section{Rationale and Background}
+\label{rationale-and-background}
+
+This section provides the background information and justification for the study. It includes a review of existing literature and the gaps this study aims to address.
+
+\section{Study Objectives}
+\label{study-objectives}
+
+\subsection{Primary Hypotheses}
+The primary hypothesis of this study is that the intervention will significantly reduce the incidence of adverse health events compared to standard care.
+
+\subsection{Secondary Hypotheses}
+Secondary hypotheses include the expectation that the intervention will improve overall quality of life and reduce healthcare costs.
+
+\subsection{Primary Objectives}
+The main objectives are to evaluate the effectiveness of the intervention in reducing health risks and to assess patient outcomes.
+
+\subsection{Secondary Objectives}
+Secondary objectives include examining changes in quality of life and cost-effectiveness of the intervention.
+
+\section{Research Methods}
+\label{research-methods}
+
+\subsection{Study Design}
+The study will employ a randomized controlled trial design to compare the intervention with standard care.
+
+\subsection{Data Sources}
+Data will be sourced from electronic health records, patient surveys, and clinical assessments.
+
+\subsection{Study Population}
+The study population will include adult patients with chronic conditions who meet the inclusion criteria.
+
+\subsection{Exposures}
+The primary exposure is the intervention being tested, with comparisons made to the standard care.
+
+\subsection{Outcomes}
+Outcomes include rates of adverse health events, quality of life measures, and healthcare utilization.
+
+\subsection{Covariates}
+Covariates will include age, gender, and comorbid conditions, which may influence the study outcomes.
+
+\section{Data Analysis Plan}
+\label{data-analysis-plan}
+
+\subsection{Calculation of Time-at-Risk}
+The time-at-risk will be calculated based on the duration of patient exposure to the intervention and follow-up periods.
+
+\subsection{Model Specification}
+Statistical models will be specified to account for the effects of the intervention and other covariates.
+
+\subsection{Pooling Effect Estimates Across Databases}
+Effect estimates will be pooled from multiple databases to increase statistical power and generalizability.
+
+\subsection{Analyses to Perform}
+Analyses will include comparisons of outcomes between intervention and control groups, as well as sensitivity analyses.
+
+\subsection{Output}
+The results will be presented in terms of effect sizes, confidence intervals, and statistical significance.
+
+\section{Evidence Evaluation}
+\label{evidence-evaluation}
+
+\subsection{Study Diagnostics}
+Diagnostics will include assessments of model fit and validation of the analysis methods.
+
+\subsection{Sample Size and Study Power}
+Sample size calculations and power analyses will ensure the study is adequately powered to detect significant effects.
+
+\subsection{Cohort Comparability}
+Comparability of the intervention and control cohorts will be assessed using baseline characteristics and propensity scores.
+
+\subsection{Systematic Error Assessment}
+Systematic errors and biases will be evaluated and addressed in the analysis.
+
+\section{Strengths and Limitations of the Research Methods}
+\label{strengths-and-limitations}
+
+This section will discuss the strengths of the research design, such as its rigor and validity, as well as limitations, including potential sources of bias.
+
+\section{Protection of Human Subjects}
+\label{protection-of-human-subjects}
+
+Details on how human subjects will be protected, including informed consent procedures and confidentiality measures, will be described.
+
+\section{Management and Reporting of Adverse Events and Adverse Reactions}
+\label{management-of-adverse-events}
+
+Procedures for monitoring, documenting, and reporting adverse events and reactions will be outlined.
+
+\section{Plans for Disseminating and Communicating Study Results}
+\label{dissemination-of-results}
+
+Plans for disseminating the study results through publications, presentations, and other channels will be described.
+
+\section{Appendix: Negative Controls}
+\label{appendix-negative-controls}
+
+This appendix will include information on negative controls used in the study to test for non-specific effects.
+
+\section{References}
+\label{references}
+
+\printbibliography
+
+\end{document}
